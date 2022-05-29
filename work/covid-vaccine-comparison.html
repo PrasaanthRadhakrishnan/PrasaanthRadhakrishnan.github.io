@@ -35,7 +35,7 @@
                 <h1 class="section__title section__title--intro"> 
                     COVID Vaccine<strong class="item-page-heading">Comparison</strong>
                 </h1>
-                <p class="section__subtitle section__subtitle--intro">(Ongoing)</p>
+                <p class="section__subtitle section__subtitle--intro">Analysis of Vaccination</p>
                 <img src="../img/covid-vaccine.jpeg" alt="Item Photo" class="intro__img item__img">
             </section>
 
@@ -44,7 +44,7 @@
                 <div class="portfolio-item-individual">
                     <div class="portfolio-item-first-div">
                         <p>
-                            <strong>What is Optical Character Recognition(OCR)?</strong><br/><br/>
+                            <strong>Overview of COVID-19 Vaccination</strong><br/><br/>
                             The COVID-19 vaccination campaign in the United States is an ongoing mass immunization campaign for the COVID-19 pandemic in the United States. The Food and Drug Administration (FDA) first granted emergency use authorization to the Pfizer-BioNTech vaccine on December 10, 2020, and mass vaccinations began four days later.
                             <br/><br/>As of March 2022, according to The Commonwealth Fund, COVID-19 vaccination in the United States has prevented an additional 2.3 million deaths, an additional 17 million hospitalizations, and an additional 66.2 million infections from COVID-19. Vaccination has also prevented an additional $899.4 billion in healthcare costs.
                         </p>
@@ -60,39 +60,121 @@
                     <strong>Project Overview:</strong>
                 </p>
                 <p>
-                    Sorting of packages manually can be a tedious job. I worked in a team with 3 of my peers and we automated this process by using the concept of Optical Character Recognition (OCR). We built a system, which will automate the process of sorting logistics that is done in courier offices or postal offices.
+                    COVID-19 is a contagious disease which is caused by a severe acute respiratory syndrome coronavirus 2(SARS-CoV-2) and is the reason for millions of deaths around the globe. This is no doubt one of the biggest pandemics the world has ever seen. Our project studied the effects of various vaccines on patients and their progress. Even though this paper also includes various datasets, it primarily studies the effects of the vaccine in California, U.S. The data starts from the 5th of January 2020 to the 9th of March 2022. The dataset would be expanded in the future for better analysis and results. It also includes the various steps involved in data mining which is pre-processing, encoding, scaling the data, and building an algorithm that would predict the best results for the datasets.
                 </p>
                 <p>
-                    <strong>Journal Published:</strong>
+                    <strong>Project Report:</strong>
                 </p>
                 <p>
-                    <a href="https://www.ijert.org/research/automation-of-logistic-services-using-optical-character-recognition-ocr-IJERTCONV7IS10044.pdf">Automation of Logistic Services using Optical Character Recognition (OCR)</a>
+                    <a href="../media/COVID-Vaccination-progress-analysis.pdf">COVID Vaccination Progress Analysis</a>
                 </p>
                 <p>
-                    <strong>Working of the Project:</strong>
+                    <strong>Project Methodolgies and Results:</strong>
                 </p>
                 <p>
-                    The first sub-system consisted of a conveyor belt where a parcel is placed and starts to move. When the IR sensor detects a parcel, it would trigger a camera module to capture an image. The camera would capture the image of the postal code on the parcel. I also designed a PCB which had inputs and outputs for all the motors. modules and the Raspberry Pi Microprocessor. 
-                </p>
+                    The datasets that we used had over 40,000 rows of data in it and it required a lot of preprocessing. We dealt with handing the null values in the following way:</p>
                 <p>
-                    In the second sub-system the image would be sent for further processing to the Raspberry Pi and Optical Character Recognition would be done on it to identify the numbers. The model used for recognizing the numbers would be trained using Tensorflow.
-                </p>
-                <p>
-                    We used the MNIST dataset to train our CNN model. Although the dataset is effectively solved, it can be used as the basis for learning and practicing how to develop, evaluate, and use convolutional deep learning neural networks for image classification from scratch. We also used K-fold Cross Vlaidation for checking the accuracy of our model. But we faced bigger problems in processing the image that was clicked. We had to preprocess the image and remove noise and effectively separate 6 digits from each other and predict each of them separately. The package required the pincode to be placed in a grid so we could use them as a reference to get the digits only instead of other details like names and addresses.
-                </p>
-                <p>
-                    After the numbers on the package are identified according to the specified constraints as required by the postal offices, control signals would be given to the Servo Motors which are also attached to the sides of the conveyor system to sort out the packages as required and they would be put in separate containers and would be sent out the respective areas to be delivered.
-                </p>
-                <p>
-                    <strong>Hardware Used:</strong>
                     <ul>
-                        <li>Raspberry Pi</li>
-                        <li>Conveyor Belt</li>
-                        <li>Printed Circuit Board(PCB)</li>
-                        <li>DC Motors</li>
-                        <li>Servo Motors</li>
-                        <li>Camera Module</li>
-                        <li>IR Sensor</li>
+                        <li>If the dataset had multiple rows with multiple "NaN" values missing. In this case, dropping those rows would be the best solution</li>
+                        <li>If the dataset has a feature with multiple “NaNs”, then there could be multiple solutions to it such as replacing them with a completely new value, replacing them with the most occurring value, replacing them with zeroes or with the mean or median values.</li>
+                    </ul>
+                </p>
+                <p>
+                    We encoded the data using Label Encoders as our data had both Nominal variables and categorical variables. Scaling the data is one of the most important steps when it comes to preprocessing the data and we decided to go with a 'Min-Max Scaler' for standardizing our data. The standardizing formula is given as follows:
+                </p>
+                <p style="text-align:center;">
+                    <em>X_std = (X - X.min) / (X.max - X.min)</em><br/><br/>
+                    <em>X_scaled = X_std * (max - min) + min</em><br/>
+                </p>
+                <p>
+                    We used various classifiers like Decision Trees, Random Forest Classifier, K Nearest Neighbors, Neural Networks and Support Vector Machines. It was tested using 1 fold, 2 fold, 3 fold, 4 fold and 5 fold cross validation techniques. The results we obtained after training our data with the models listed are as follows:
+                </p>
+                <p>
+                    <table style="text-align:center;">
+                        <tr>
+                            <th>Classifier</th>
+                            <th>Fold 1</th>
+                            <th>Fold 2</th>
+                            <th>Fold 3</th>
+                            <th>Fold 4</th>
+                            <th>Fold 5</th>
+                        </tr>
+                        <tr>
+                            <th>Decision Tree Classifier</th>
+                            <td>0.9627</td>
+                            <td>0.9651</td>
+                            <td>0.9592</td>
+                            <td>0.9622</td>
+                            <td>0.9614</td>
+                        </tr>
+                        <tr>
+                            <th>Random Forest Classifier</th>
+                            <td>0.9851</td>
+                            <td>0.9840</td>
+                            <td>0.9798</td>
+                            <td>0.9812</td>
+                            <td>0.9818</td>
+                        </tr>
+                    </table>
+                </p>
+                <p>
+                    <table style="text-align:center;">
+                        <tr>
+                            <th>Classifier</th>
+                            <th>Accuracy</th>
+                            <th>n value</th>
+                        </tr>
+                        <tr>
+                            <th>K Nearest Neighbors</th>
+                            <td>0.7234</td>
+                            <td>4</td>
+                        </tr>
+                        <tr>
+                    </table>
+                </p>
+                <p>
+                    <table style="text-align:center;">
+                        <tr>
+                            <th>Classifier</th>
+                            <th>Accuracy</th>
+                            <th>Error(mean squared error)</th>
+                        </tr>
+                        <tr>
+                            <th>Neural Network Classifier</th>
+                            <td>0.9168</td>
+                            <td>1176816.0</td>
+                        </tr>
+                        <tr>
+                    </table>
+                </p>
+                <p>
+                    <table style="text-align:center;">
+                        <tr>
+                            <th>Kernel</th>
+                            <th>Accuracy</th>
+                            <th>Recall</th>
+                            <th>Precision</th>
+                        </tr>
+                        <tr>
+                            <th>Linear</th>
+                            <td>0.9032</td>
+                            <td>0.9032</td>
+                            <td>0.8788</td>
+                        </tr>
+                        <tr>
+                    </table>
+                </p>
+                <p>
+                    Although the COVID situation has been alleviated by vaccines today, the virus is evolving with the development of vaccines. So, we are never too sure our health is secure from getting one. Therefore, this research of analyzing the impact of COVID is important. It’s crucial for people to know when and where the outbreak will happen again. In this practice, we have only used a small size of data samples. For better predictions and forecasting, we plan on analyzing data with bigger size. In addition, to fit the large amount of data, the model will be changed to deep learning with neural networks.
+                </p>
+                <p>
+                    <strong>Algorithms Used:</strong>
+                    <ul>
+                        <li>Decision Trees</li>
+                        <li>Random Forest Classifier</li>
+                        <li>K Nearest Neighbors</li>
+                        <li>Neural Networks</li>
+                        <li>Support Vector Machines</li>
                     </ul>
                 </p>
                 

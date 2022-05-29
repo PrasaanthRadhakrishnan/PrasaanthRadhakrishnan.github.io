@@ -33,49 +33,126 @@
             <!-- Introduction -->
             <section class="intro" id="home">
                 <h1 class="section__title section__title--intro"> 
-                    ML<strong class="item-page-heading">Engineer</strong>
+                    Youtube<strong class="item-page-heading">Dislikes Count</strong>
                 </h1>
-                <p class="section__subtitle section__subtitle--intro">Machine Learning</p>
-                <img src="../img/ml-robot.webp" alt="Item Photo" class="intro__img item__img">
+                <p class="section__subtitle section__subtitle--intro">Using Sentiment Analysis</p>
+                <img src="../img/youtube-dislike-button.jpeg" alt="Item Photo" class="intro__img item__img">
             </section>
 
-            <div class="portfolio-item-individual">
-                <div class="portfolio-item-first-div">
-                    <p>
-                        Machine learning (ML) is the study of computer algorithms that can improve automatically through experience and by the use of data. It is seen as a part of artificial intelligence. Machine learning algorithms build a model based on sample data, known as training data, in order to make predictions or decisions without being explicitly programmed to do so. Machine learning algorithms are used in a wide variety of applications, such as in medicine, email filtering, speech recognition, and computer vision, where it is difficult or unfeasible to develop conventional algorithms to perform the needed tasks.
-                    </p>
-                    <img src="../img/ml-ai-dp.png" alt="">
+
+            <section class="general-section">
+                <div class="portfolio-item-individual">
+                    <div class="portfolio-item-first-div">
+                        <p>
+                            <strong>What is Sentiment Analysis?</strong><br/><br/>
+                            Sentiment analysis (or opinion mining) is a natural language processing (NLP) technique used to determine whether data is positive, negative or neutral. Sentiment analysis is often performed on textual data to help businesses monitor brand and product sentiment in customer feedback, and understand customer needs.
+                            <br/><br/>
+                            Sentiment analysis focuses on the polarity of a text (positive, negative, neutral) but it also goes beyond polarity to detect specific feelings and emotions (angry, happy, sad, etc), urgency (urgent, not urgent) and even intentions (interested v. not interested).
+                            <br/><br/>
+                            Since humans express their thoughts and feelings more openly than ever before, sentiment analysis is fast becoming an essential tool to monitor and understand sentiment in all types of data.
+                        </p>
+                        <img src="../img/sentiment-analysis-transparent.png" alt="" style="margin-top:10px;">
+                    </div>
                 </div>
+            </section>
+
+
+            <section class="experience-section">
+            <div class="portfolio-item-individual">
                 <p>
-                    <strong>My Experience:</strong>
+                    <strong>Project Introduction:</strong>
                 </p>
                 <p>
-                    My first work on Machine Learning was in my final year of my undergraduate degree for my final year project. The project was to Automate Sorting Logistics by reading handwritten pincodes using Optical Character Recognition. We used some basics of TensorFlow, Keras and even Google AI to get a good estimate of the handwritten characters written by us. We also published a Journal on it at IJERT (International Journal of Engineering research and Technology).
+                    Youtube's removal of showing dislikes on a video resulted in a big backlash and was widely criticized for supporting big organizations which did not want their videos getting disliked as it would result in the videos not being watched as much. Though the company believes this would help content creators avoid hate on the platform through "dislike bombing", many also criticized this move saying it removed an important metric for users to judge a video's legitimacy. A majority of Youtube users also criticized this move and had a petition on change.org to bring back the button which has presently been signed by about 19,000 people. 
+                    <br/><br/>
+                    We made a browser extension that goes through the comment section of the video and uses Machine Learning algorithms with Sentiment analysis to get the overall response of the commenters and estimate the like-dislike ratio the video could have gotten.
                 </p>
                 <p>
-                    During my office tenure, I participated in a Hackathon where we decided to work on a topic which was a requirement by the company. The topic was to build a Portal where various companies could bid on products offered by the company and order them in bulk for a lower price. We built a product which had a complete User Interface which the companies could log into with their respective credentials. This project also included a model which would predict the average cost of the products and how much they could be bought for based on previous purchases. It also had a DB for storing this data and used that to make the predictions.
+                    <strong>Project Report:</strong>
                 </p>
                 <p>
-                    I am currently pursuing my Masters in Computer Engineering at San Jose State Univeristy with a specialization in Data Science. I am currently pursuing courses in Data Mining and Machine learning where I am working on concepts like Supervised and Unsupervised Learning and the differnet models it consists of. I am also currently working on two projects which are 'Covid Vaccine Comparison' and 'Youtube Dislike Extension' in which we use various ML techniques like Regression, PCA, KNN, Association Rule Mining and so on to determine the best model to give high accuracy prediction rates.
+                    <a href="../media/Youtube Dislike Estimation.pdf">Sentiment Analysis of YouTube Comments for Estimating Like-Dislike Ratio</a>
                 </p>
                 <p>
-                    <strong>Projects I've Worked on:</strong>
+                    <strong>Background:</strong>
+                </p>
+                <p>
+                    Our process consisted of selected datasets with comments for the analysis of the comments. Firstly, we went through the datasets in a lot of sources such as Kaggle, Data World, Open ML Repository, and US Census. However, once we completed the data preprocessing and started working on the data, we realized that most datasets were all popular video datasets with very one-sided types of comments such as song videos, movie comments, etc. It is pertinent to note that most of the comments in the music video were the most common datasets of youtube comments. 
+                </p>
+                <p>
+                    Therefore, for the purpose of our project, we took videos off the trending section of YouTube and scraped the comments from those videos. We found an existing dataset of YouTube comments on Kaggle and added the scraped comments to the existing dataset to augment it with more recent data. We tried not to rely on music videos or movie-based videos, since a lot of comments on these videos contain neutral information such as movie facts or song lyrics, and also become relevant, skewing user analysis.
+                </p>
+                <p>
+                    In the scraping process, we used the parameter of relevance that the YouTube API provides to help skim through spam comments. While this method isn't perfect, since some spam comments still make it through to the dataset, it has been found that their sentiments are often neutral, so they don't negatively impact the analysis very hard unless they are present in a majority. Thus, spam comments were not a major problem for our approach.
+                </p>
+                <p>
+                    <strong>Working of the Project:</strong>
+                </p>
+                <p>
+                    Our overall process mainly consists of two parts which are i) Getting the authentication and ii) Getting the comments on the YouTube video. Its explanation is given below
+                    <br/><br/>
+                    <em style="font-weight:100"><u>i) Getting the Authentication</u></em>
                     <ul>
-                        <li><a href="optical-character-recognition.html">Automation of Sorting Logistics using Optical Character Recognition</a></li>
-                        <li><a href="covid-vaccine-comparison.html">Covid Vaccine Performace Comparison</a></li>
-                        <li><a href="youtube-dislike-extension.html">Youtube-Dislike-Extension</a></li>
+                        <li>
+                            <u>Google Account:</u> This part of the process requires a Google Account to access the APIs required for getting the comments on the video.
+                        </li>
+                        <li>
+                            <u>Create a Project in the developer console:</u>  This involves accessing the API developer console and creating a project with a unique ID and setting up a billings account if we need to charge project costs.
+                        </li>
+                        <li>
+                            <u>Obtain authorization credentials:</u>  YouTube supports two types of API which are OAuth 2.0 and API Keys. We can generate OAuth 2.0 for web applications, service accounts, or installed applications. A request that does not generate an OAuth 2.0 token must generate an API key.
+                        </li>
+                        <li>
+                            <u>Register the application to YouTube Data API:</u>  The YouTube API is an application programming interface that allows you to embed videos, curated playlists, and offer other YouTube functionalities on your website. It helps businesses offer advanced video-sharing features on their website or app without needing to write code from scratch. It has a wide selection of features and functionalities that allow us to retrieve data at a mass scale without accessing individual videos and channels.
+                        </li>
+                        <li>
+                            <u>Get authorization details:</u> This step is forgetting the authorization to use the YouTube API and the API key to get all the YouTube comments.
+                        </li>
+                        <li>
+                            <u>Save them for the future:</u>  We can find the API key stored in the Google Developer Account and this can be reused in the Project Dashboard under the APIs card.
+                        </li>
                     </ul>
                 </p>
                 <p>
-                    <strong>Tools, IDEs and Servers I used:</strong>
+                    <em style="font-weight:100"><u>ii) Getting the Comments</u></em>
                     <ul>
-                        <li>Visual Studio Code</li>
-                        <li>Jupyter Notebook</li>
-                        <li>Google Colaboratory Notebook</li>
-                        <li>Anaconda</li>
+                        <li>
+                            <u>Getting the Video ID:</u> Every YouTube video has a specific ID that can be used for retrieving the comments on it. This is used for the API.
+                        </li>
+                        <li>
+                            <u>Comment Thread():</u> A commentThread resource contains information about a YouTube comment thread which comprises a top-level comment and replies if any exist to that comment. A commentThread resource can represent comments about either a video or a channel.
+                        </li>
+                        <li>
+                            <u>Listing Down Comments:</u>  Making use of the List of comments that we received from the commentThreads() method from YouTube API, we can now use this data to perform further operations.
+                        </li>
+                        <li>
+                            <u>Scroll for all the comments:</u>  Once we have the list of comments, we go through the list to check for possible comments that could provide us essential information about how a user finds that video i.e., good or bad. This data should help us in determining the likes and dislikes of the video. This data should also not include spam comments such as channel promotions or unrelated comments. This is done by using the order = relevance parameter, which uses YouTube's default
+                        </li>
+                        <li>
+                            <u>Store in CSV:</u> This list of data cannot be directly used for performing Machine Learning operations so we need to store it in a CSV file so we can perform more operations on them and use it as a data frame.
+                        </li>
                     </ul>
+                </p>
+                <p>
+                    For the ML part, we are using an implementation of BERT (Bidirectional Encoder Representations from Transformers), which entails a pretrained representation of a large word corpus for use in sentiment analysis. We trained our model with the dataset that was described above. The model was then configured with the TextBlob wrapper library, which opened functions for sentiment analysis on a large scale with acceptable time complexity. We needed this since we would be applying sentiment analysis to a large number of comments in real-time, therefore time complexity is of utmost importance. 
+                </p>
+                <p>
+                    <strong>Results:</strong>
+                </p>
+                <p>
+                    An important note that should be made about the "accuracy" of a custom model trained by BERT is that since the model is unsupervised and unlabelled, the best metric of performance is its performance with YouTube videos. As per our heuristic evaluation, we found that all videos with a large number of dislikes (from before those videos had their dislikes removed) were categorized as "Bad", while most positive and legitimate videos were categorized as "Good".
+                </p>
+                <p>
+                    The chrome extension has a "Get Analysis" button which shows the results. As is visible, the extension is faded out when the active tab is not a YouTube video. While there is no logic currently to stop a user from pushing a non-YouTube link to the extension, the Google API rejects any other links and returns a blank answer. Thus the extension will only work for YouTube videos.
+                </p>
+                <p>
+                    Upon hitting the "Get Analysis" button, the extension returns a binary value. A video can either be "Good" or "Bad", depending on the analysis of the top 100 comments (based on YouTube's relevance). As can be seen from the image below, the video that's played in the browser has a "good" rating. However, another video with conflicting or bad comments might get a rating of Bad by the extension.
+                </p>
+                <p>
+                    While these issues are open and currently active in our implementation, the current state of the implementation proves successful in giving a binary score of the legitimacy of a YouTube video, which is what the objective of our project was.
                 </p>
             </div>
+            </section>
 
             <!-- Footer -->
             <footer class="footer">

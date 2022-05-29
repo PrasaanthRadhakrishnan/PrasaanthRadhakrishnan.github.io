@@ -33,49 +33,79 @@
             <!-- Introduction -->
             <section class="intro" id="home">
                 <h1 class="section__title section__title--intro"> 
-                    ML<strong class="item-page-heading">Engineer</strong>
+                    Sudoku<strong class="item-page-heading">Multithreading</strong>
                 </h1>
-                <p class="section__subtitle section__subtitle--intro">Machine Learning</p>
-                <img src="../img/ml-robot.webp" alt="Item Photo" class="intro__img item__img">
+                <p class="section__subtitle section__subtitle--intro">For a 9x9 Sudoku</p>
+                <img src="../img/multithreading.webp" alt="Item Photo" class="intro__img item__img">
             </section>
 
-            <div class="portfolio-item-individual">
-                <div class="portfolio-item-first-div">
-                    <p>
-                        Machine learning (ML) is the study of computer algorithms that can improve automatically through experience and by the use of data. It is seen as a part of artificial intelligence. Machine learning algorithms build a model based on sample data, known as training data, in order to make predictions or decisions without being explicitly programmed to do so. Machine learning algorithms are used in a wide variety of applications, such as in medicine, email filtering, speech recognition, and computer vision, where it is difficult or unfeasible to develop conventional algorithms to perform the needed tasks.
-                    </p>
-                    <img src="../img/ml-ai-dp.png" alt="">
+
+            <section class="general-section">
+                <div class="portfolio-item-individual">
+                    <div class="portfolio-item-first-div">
+                        <p>
+                            <strong>What is Multithreading?</strong><br/><br/>
+                            In computer architecture, multithreading is the ability of a central processing unit (CPU) (or a single core in a multi-core processor) to provide multiple threads of execution concurrently, supported by the operating system. This approach differs from multiprocessing. In a multithreaded application, the threads share the resources of a single or multiple cores, which include the computing units, the CPU caches, and the translation lookaside buffer (TLB).
+                            </p>
+                        <img src="../img/multithreading-transparent.png" alt="" style="margin-top:10px;">
+                    </div>
                 </div>
+            </section>
+
+
+            <section class="experience-section">
+            <div class="portfolio-item-individual">
                 <p>
-                    <strong>My Experience:</strong>
+                    <strong>Project Introduction:</strong>
                 </p>
                 <p>
-                    My first work on Machine Learning was in my final year of my undergraduate degree for my final year project. The project was to Automate Sorting Logistics by reading handwritten pincodes using Optical Character Recognition. We used some basics of TensorFlow, Keras and even Google AI to get a good estimate of the handwritten characters written by us. We also published a Journal on it at IJERT (International Journal of Engineering research and Technology).
+                    Sudoku is a Japanese puzzle game which requires logical placement of numbers. The player must populate a grid of n x n cells with values between 1 and n. The placement of these values is constrained such that no cells in the same row or column can contain the same value. Furthermore, the grid is also divided into n square regions, known as boxes. Each square is √n x √n big. Like the rows and columns, all the values in these boxes must be distinct. A unique puzzle is created by placing fixed values into the grid to begin such that there is only one possible solution. We are developing a multithreaded application to validate the 9x9 grid sudoku puzzle. 
+                    <br/><br/>
+                    Multithreading our application increases the throughput and improves the performance by executing the threads concurrently on single core processor or parallel on multi core processors. This project helps in understanding the concept of multithreaded application. It gives detailed information about creating threads and interacting with the threads i.e passing parameters to thread and returning parameters from thread. 
                 </p>
                 <p>
-                    During my office tenure, I participated in a Hackathon where we decided to work on a topic which was a requirement by the company. The topic was to build a Portal where various companies could bid on products offered by the company and order them in bulk for a lower price. We built a product which had a complete User Interface which the companies could log into with their respective credentials. This project also included a model which would predict the average cost of the products and how much they could be bought for based on previous purchases. It also had a DB for storing this data and used that to make the predictions.
+                    <strong>Background:</strong>
                 </p>
                 <p>
-                    I am currently pursuing my Masters in Computer Engineering at San Jose State Univeristy with a specialization in Data Science. I am currently pursuing courses in Data Mining and Machine learning where I am working on concepts like Supervised and Unsupervised Learning and the differnet models it consists of. I am also currently working on two projects which are 'Covid Vaccine Comparison' and 'Youtube Dislike Extension' in which we use various ML techniques like Regression, PCA, KNN, Association Rule Mining and so on to determine the best model to give high accuracy prediction rates.
-                </p>
-                <p>
-                    <strong>Projects I've Worked on:</strong>
+                    We had to design a multithreaded system application which validates the solution of the sudoku puzzle and then determines if it is valid. There are a lot of ways we can go about with this validator. The most common strategy would be as follows:
                     <ul>
-                        <li><a href="optical-character-recognition.html">Automation of Sorting Logistics using Optical Character Recognition</a></li>
-                        <li><a href="covid-vaccine-comparison.html">Covid Vaccine Performace Comparison</a></li>
-                        <li><a href="youtube-dislike-extension.html">Youtube-Dislike-Extension</a></li>
+                        <li>One thread that runs through all the columns and reads the values to make sure each column has all the numbers from 1 to 9 and checks for no repeating numbers.</li>
+                        <li>One thread that runs through the rows from 1 to 9 and checks for all numbers and no repeating numbers.</li>
+                        <li>One thread for each 3 x 3 sub-grid to check for the numbers 1 to 9</li>
                     </ul>
                 </p>
                 <p>
-                    <strong>Tools, IDEs and Servers I used:</strong>
-                    <ul>
-                        <li>Visual Studio Code</li>
-                        <li>Jupyter Notebook</li>
-                        <li>Google Colaboratory Notebook</li>
-                        <li>Anaconda</li>
-                    </ul>
+                    In this case there would be 1 + 1 + 9 threads = 11 threads to do this whole process. Another possible solution would be to create one thread to check one row and one thread each for one column. This would lead to a creation of a total of 9 + 9 + 9 threads = 27 threads. However for this project we are planning to use one thread to check three rows and one thread to check three columns. So for a total of 9 rows and 9 columns we would have a total of 3 + 3 + 9 = 15 threads.
+                </p>
+                <p>
+                    <strong>Working of the Project:</strong>
+                </p>
+                <p>
+                    This project has two main parts:
+                </p>
+                <p>
+                    i) To pass parameters to each of the threads:
+                </p>
+                <p>
+                    The first part would be to create threads by the parent thread and in this case would be to create 15 threads. The parameters that would be passed to the threads would be the location of what part it would check, that is either the rows or columns or sub-grids. The best approach using C programming would be to use a structure to pass the parameters or values of row, column and sub-grid.
+                </p>
+                <p>
+                    We will make use of PThreads and Windows programs to create the worker threads. The function that will be used to create the thread will be pthread_create() which will pass the parameters as well as the function the threads have to execute.
+                </p>
+                <p>
+                    ii) Return the results to the parent thread:
+                </p>
+                <p>
+                    Once a worker thread is done with its job of validating the numbers it must rejoin the parent thread and pass its values to the parent. This can be done using the pthread_join(). In this case once the thread has returned it would update an integer array with a 1 or a 0. The thread would return true if its check has been validated and no other problems or repetitions are found in the part assigned to it and update 1 to the integer array. It would return false and update the integer array to 0 if the check is not correct.
+                </p>
+                <p>
+                    <strong>Results:</strong>
+                </p>
+                <p>
+                    We obtained much faster results with our approach of using 15 threads as the execution time for 15 threads was 0.8125 seconds and with using just 1 thread the execution time was 1.137 seconds. Using 27 threads did give a faster result than 15 threads as its execution time was 0.7431 seconds but it would require more usage of computational resources. Performance also varied with different systems which had a differnt number of cores in them.
                 </p>
             </div>
+            </section>
 
             <!-- Footer -->
             <footer class="footer">
