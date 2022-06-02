@@ -33,49 +33,80 @@
             <!-- Introduction -->
             <section class="intro" id="home">
                 <h1 class="section__title section__title--intro"> 
-                    ML<strong class="item-page-heading">Engineer</strong>
+                    Automated<strong class="item-page-heading">Farming Robot</strong>
                 </h1>
-                <p class="section__subtitle section__subtitle--intro">Machine Learning</p>
-                <img src="../img/ml-robot.webp" alt="Item Photo" class="intro__img item__img">
+                <p class="section__subtitle section__subtitle--intro">Using RF Technology</p>
+                <img src="../img/arduino-robot.jpeg" alt="Item Photo" class="intro__img item__img">
             </section>
 
-            <div class="portfolio-item-individual">
-                <div class="portfolio-item-first-div">
-                    <p>
-                        Machine learning (ML) is the study of computer algorithms that can improve automatically through experience and by the use of data. It is seen as a part of artificial intelligence. Machine learning algorithms build a model based on sample data, known as training data, in order to make predictions or decisions without being explicitly programmed to do so. Machine learning algorithms are used in a wide variety of applications, such as in medicine, email filtering, speech recognition, and computer vision, where it is difficult or unfeasible to develop conventional algorithms to perform the needed tasks.
-                    </p>
-                    <img src="../img/ml-ai-dp.png" alt="">
+
+            <section class="general-section">
+                <div class="portfolio-item-individual">
+                    <div class="portfolio-item-first-div">
+                        <p>
+                            <strong>What is Radio Frequency?</strong><br/><br/>
+                            Radio frequency (RF) is the oscillation rate of an alternating electric current or voltage or of a magnetic, electric or electromagnetic field or mechanical system in the frequency range from around 20 kHz to around 300 GHz. This is roughly between the upper limit of audio frequencies and the lower limit of infrared frequencies. These are the frequencies at which energy from an oscillating current can radiate off a conductor into space as radio waves. Different sources specify different upper and lower bounds for the frequency range.
+                            <br/><br/>
+                            Electric currents that oscillate at radio frequencies (RF currents) have special properties not shared by direct current or lower audio frequency alternating current, such as the 50 or 60 Hz current used in electrical power distribution.
+                        </p>
+                        <img src="../img/radio-frequency.png" alt="" style="margin-top:10px;max-width: 300px;">
+                    </div>
                 </div>
+            </section>
+
+
+            <section class="experience-section">
+            <div class="portfolio-item-individual">
                 <p>
-                    <strong>My Experience:</strong>
+                    <strong>Project Introduction:</strong>
                 </p>
                 <p>
-                    My first work on Machine Learning was in my final year of my undergraduate degree for my final year project. The project was to Automate Sorting Logistics by reading handwritten pincodes using Optical Character Recognition. We used some basics of TensorFlow, Keras and even Google AI to get a good estimate of the handwritten characters written by us. We also published a Journal on it at IJERT (International Journal of Engineering research and Technology).
+                    In India, there are 70% people dependent on agriculture. Robotics plays a major role in various fields such as industrial, medical, military applications etc., The robotics field are gradually increasing its productivity in agriculture field. Some of the major problems in the Indian agricultural are rising of input costs, availability of skilled labors, lack of water resources and crop monitoring. To overcome these problems, the automation technologies were used in agriculture. The automation in the agriculture could help farmers to reduce their efforts.By the development of these agrobots lot of manual labor will also be decreased.
+                    <br/><br/>
+                    The robot has been developed for the processes such as ploughing and seed sowing. The robot is developed to concentrate in an efficient manner and also it is expected to perform the operations autonomously. These functions can be integrated into a single robot and then performed.In recent years, the development of autonomous vehicles in agriculture has experienced increased interest. This development has led many researchers to start developing more rational and adaptable vehicles. All the processes are advance to modifying the mechanism in farming which works automatically without the man power requirement.</p>
+                <p>
+                    <strong>Project Report:</strong>
                 </p>
                 <p>
-                    During my office tenure, I participated in a Hackathon where we decided to work on a topic which was a requirement by the company. The topic was to build a Portal where various companies could bid on products offered by the company and order them in bulk for a lower price. We built a product which had a complete User Interface which the companies could log into with their respective credentials. This project also included a model which would predict the average cost of the products and how much they could be bought for based on previous purchases. It also had a DB for storing this data and used that to make the predictions.
+                    <a href="../media/Automated Farming Report.pdf">Automated Farming Robot</a>
+                </p>
+                    <p>
+                    <strong>Background:</strong>
                 </p>
                 <p>
-                    I am currently pursuing my Masters in Computer Engineering at San Jose State Univeristy with a specialization in Data Science. I am currently pursuing courses in Data Mining and Machine learning where I am working on concepts like Supervised and Unsupervised Learning and the differnet models it consists of. I am also currently working on two projects which are 'Covid Vaccine Comparison' and 'Youtube Dislike Extension' in which we use various ML techniques like Regression, PCA, KNN, Association Rule Mining and so on to determine the best model to give high accuracy prediction rates.
+                    The present project aims at designing an intelligent robotic vehicle which can be controlled wirelessly through RF communication. The objective is to develop a microcontroller-based system that helps in on farm activities like seeding, ploughing and closing the seed pit at designated the autonomous robot. The process of seeding is done by using the DC motor.
                 </p>
                 <p>
-                    <strong>Projects I've Worked on:</strong>
+                    The aim is reducing the man power and increasing the productivity rates to a higher level. It is also efficient in terms of pollution because it does not run on fossil fuels, in turn reducing the consumption of ever depleting natural resources. This makes the robot a non-polluting vehicle. One of the other aim is to reduce the running cost of digging or ploughing machines which makes it more suitable for farmers in India to afford it.
+                </p>
+                <p>
+                    <strong>Working of the Project:</strong>
+                </p>
+                <p>
+                    An RF transmitter module is a small PCB sub-assembly capable of transmitting a radio wave and modulating that wave to carry data. Transmitter modules are usually implemented alongside a micro controller which will provide data to the module which can be transmitted. RF transmitters are usually subject to requirements which dictate the maximum allowable transmitter power output, harmonics, and band edge requirements.
+                </p>
+                <p>
+                    An RF receiver module receives the modulated RF signal, and demodulates it. There are two types of RF receiver modules: superheterodyne receivers and super-regenerative receivers. Super-regenerative modules are usually low cost and low power designs using a series of amplifiers to extract modulated data from a carrier wave.
+                </p>
+                <p>
                     <ul>
-                        <li><a href="optical-character-recognition.html">Automation of Sorting Logistics using Optical Character Recognition</a></li>
-                        <li><a href="covid-vaccine-comparison.html">Covid Vaccine Performace Comparison</a></li>
-                        <li><a href="youtube-dislike-extension.html">Youtube-Dislike-Extension</a></li>
+                        <li>In transmitter part a data Encoder and a RF transmitter is used. The four push buttons are connected with Encoder with respect to ground. When we will press any button encoder will get a digital LOW signal and then applied this signal serially to RF transmitter. The Encoder IC HT12E encodes data or signal or converting it into serial form and then sends this signal by using RF transmitter into the environment.</li>
+                        <br/>
+                        <li>At the receiver end we have used RF receiver to receive data or signal and then applied to HT12D decoder. This decoder IC converts the received serial data to parallel and then send this decoded signal to L293D Motor driver IC. According to the received data robot runs by using two dc motor in forward, reverse, left, right and stop direction.</li>
+                        <br/>
+                        <li>As the robot moves forward the digging of the ground is done by using a structure made using sheet metal and connected to a stepper motor which starts as soon as it gets commands from the arduino module.</li>
+                        <br/>
+                        <li>The seed container is spaced at equal and calculated distance from these structures and is held using a rod holder. The seeds are sown in the digged hole by using a thermocol having a hole and rotating using a servo motor. A container is used for holding the seeds. A hole is drilled in the bottom of the container so that the seeds can fall through it.</li>
                     </ul>
                 </p>
                 <p>
-                    <strong>Tools, IDEs and Servers I used:</strong>
-                    <ul>
-                        <li>Visual Studio Code</li>
-                        <li>Jupyter Notebook</li>
-                        <li>Google Colaboratory Notebook</li>
-                        <li>Anaconda</li>
-                    </ul>
+                    <strong>Results:</strong>
+                </p>
+                <p>
+                    In this work a robot, farm robot, has been designed, built and demonstrated to carry out ploughing in an agriculture field and sowing seeds. It is expected that robot will assist the farmers in improving the efficiency of operations in their farms. It is aimed at increasing the productivity and reducing the labour involved, this robot is designed to execute the basic functions required to be carried out in farms. The robot performs the tasks like digging the ground, sowing the seeds and backfilling the soil automatically in a sequence without human intervention. Thus an effort is made so that the robot becomes an aid to the farmers. The design is accepted and unique compared to the existing robots.
                 </p>
             </div>
+            </section>
 
             <!-- Footer -->
             <footer class="footer">

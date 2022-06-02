@@ -33,49 +33,77 @@
             <!-- Introduction -->
             <section class="intro" id="home">
                 <h1 class="section__title section__title--intro"> 
-                    ML<strong class="item-page-heading">Engineer</strong>
+                    Sleep Apnea<strong class="item-page-heading">Detection</strong>
                 </h1>
-                <p class="section__subtitle section__subtitle--intro">Machine Learning</p>
-                <img src="../img/ml-robot.webp" alt="Item Photo" class="intro__img item__img">
+                <p class="section__subtitle section__subtitle--intro">Using PVDF sensors</p>
+                <img src="../img/sleep-apnea.jpeg" alt="Item Photo" class="intro__img item__img">
             </section>
 
-            <div class="portfolio-item-individual">
-                <div class="portfolio-item-first-div">
-                    <p>
-                        Machine learning (ML) is the study of computer algorithms that can improve automatically through experience and by the use of data. It is seen as a part of artificial intelligence. Machine learning algorithms build a model based on sample data, known as training data, in order to make predictions or decisions without being explicitly programmed to do so. Machine learning algorithms are used in a wide variety of applications, such as in medicine, email filtering, speech recognition, and computer vision, where it is difficult or unfeasible to develop conventional algorithms to perform the needed tasks.
-                    </p>
-                    <img src="../img/ml-ai-dp.png" alt="">
+
+            <section class="general-section">
+                <div class="portfolio-item-individual">
+                    <div class="portfolio-item-first-div">
+                        <p>
+                            <strong>What is Sleep Apnea?</strong><br/><br/>
+                            Sleep apnea, also spelled sleep apnoea, is a sleep disorder in which pauses in breathing or periods of shallow breathing during sleep occur more often than normal. Each pause can last for a few seconds to a few minutes and they happen many times a night. In the most common form, this follows loud snoring. There may be a choking or snorting sound as breathing resumes. Because the disorder disrupts normal sleep, those affected may experience sleepiness or feel tired during the day.
+                            <br/><br/>
+                            OSA is a common sleep disorder. A large analysis in 2019 of the estimated prevalence of OSA found that OSA affects 936 million—1 billion people between the ages of 30-69 globally, or roughly every 1 in 10 people, and up to 30% of the elderly. Sleep apnea is somewhat more common in men than women, roughly a 2:1 ratio of men to women, and in general more people are likely to have it with older age and obesity.
+                            </p>
+                        <img src="../img/sleep-apnea-transparent.png" alt="" style="margin:10px auto 0px;max-width: 300px;">
+                    </div>
                 </div>
+            </section>
+
+
+            <section class="experience-section">
+            <div class="portfolio-item-individual">
                 <p>
-                    <strong>My Experience:</strong>
+                    <strong>Project Introduction:</strong>
                 </p>
                 <p>
-                    My first work on Machine Learning was in my final year of my undergraduate degree for my final year project. The project was to Automate Sorting Logistics by reading handwritten pincodes using Optical Character Recognition. We used some basics of TensorFlow, Keras and even Google AI to get a good estimate of the handwritten characters written by us. We also published a Journal on it at IJERT (International Journal of Engineering research and Technology).
+                    I interned at the Indian Institute of Science for 2 months and worked on a project to be able to detect sleep apnea in patients using a wearable device. I made use of capacitive sensors to do this project. It was a prototype and its purpose was to make a record of breathing patterns to identify any anomalies and with this report, a physician could suggest an optimal diagnosis so its effects could be reduced or identified in early stages.
+                <p>
+                    <strong>Related Papers Referred:</strong>
                 </p>
                 <p>
-                    During my office tenure, I participated in a Hackathon where we decided to work on a topic which was a requirement by the company. The topic was to build a Portal where various companies could bid on products offered by the company and order them in bulk for a lower price. We built a product which had a complete User Interface which the companies could log into with their respective credentials. This project also included a model which would predict the average cost of the products and how much they could be bought for based on previous purchases. It also had a DB for storing this data and used that to make the predictions.
+                    <a href="../media/Identification-of-RR-by-a-PVDF-nasal-sensor.pdf" target="_blank">Identification of RR by using a PVDF Nasal Sensor</a><br/>
+                    <a href="../media/Packaging-of-PVDF.pdf" target="_blank">Packaging of PVDF</a><br/>
+                    <a href="../media/Polyvinylidene-fluoride-film-based-nasal-sensor-to monitor.pdf" target="_blank">PVDF film based nasal sensor to monitor</a><br/>
+                </p>
+                    <p>
+                    <strong>Background:</strong>
                 </p>
                 <p>
-                    I am currently pursuing my Masters in Computer Engineering at San Jose State Univeristy with a specialization in Data Science. I am currently pursuing courses in Data Mining and Machine learning where I am working on concepts like Supervised and Unsupervised Learning and the differnet models it consists of. I am also currently working on two projects which are 'Covid Vaccine Comparison' and 'Youtube Dislike Extension' in which we use various ML techniques like Regression, PCA, KNN, Association Rule Mining and so on to determine the best model to give high accuracy prediction rates.
+                    We made use of PVDF sensors fabricated in the Indian Institute of Science to detect the breathing patterns. PVDF film ( Precision Acoustics, UK) is taken in the cantilever configuration to form a PVDF nasal sensor. Two such identical nasal sensors were mounted on either side of headphone such that one PVDF nasal sensor is located below Right Nostril (RN) and the other below Left Nostril (LN), such that the nasal airflow during inspiration and expiration impinge on sensors.
                 </p>
                 <p>
-                    <strong>Projects I've Worked on:</strong>
-                    <ul>
-                        <li><a href="optical-character-recognition.html">Automation of Sorting Logistics using Optical Character Recognition</a></li>
-                        <li><a href="covid-vaccine-comparison.html">Covid Vaccine Performace Comparison</a></li>
-                        <li><a href="youtube-dislike-extension.html">Youtube-Dislike-Extension</a></li>
-                    </ul>
+                    Since PVDF has piezoelectric property (polarization produced by mechanical forces), it gives corresponding voltage signal when nasal airflow impinges on it. The PVDF nasal sensors measures respiration from RN and LN, separately and simultaneously. These signals are sent to an amplifier circuit as the signals produced by the PVDF sensors give a very low output and the amplified signals are then cleaned to be analysed.</p>
+                <p>
+                    <strong>Working of the Project:</strong>
                 </p>
                 <p>
-                    <strong>Tools, IDEs and Servers I used:</strong>
-                    <ul>
-                        <li>Visual Studio Code</li>
-                        <li>Jupyter Notebook</li>
-                        <li>Google Colaboratory Notebook</li>
-                        <li>Anaconda</li>
-                    </ul>
+                    <img class="pcb-and-circuit circuit" src="../img/op-amp-circuit.png">
+                    <img class="pcb-and-circuit pcb" src="../img/pcb-design.png">
+                </p>
+                <p>
+                    This included designing an amplifier circuit specific for the two sensors and the cirucit diagram is as shown above. I also designed a PCB using Eagle software to make the circuitry as compact as possible so it would not deter the headset and would allow for good mounting. The PCB design is shown above as well.    
+                </p>
+                <p>
+                    I used the LM324D as the Op Amp (Operational Amplifier) to get the amplified signal in a combination with various resistors and capacitors and the PCB manufacturing was done by an outside company.
+                </p>
+                <p>
+                    Assessment of nasal airflow is carried out by recording pressure at the nostrils. To achieve this, conventional nasal prongs, used for oxygen therapy, were connected to a pressure transducer. The rationale of the method is that the airflow turbulences at the nostrils induce a pressure that is directly related to the magnitude of nasal airflow. 
+                </p>
+                <p>
+                    <strong>Results:</strong>
+                </p>
+                <p>
+                    We were able to use two PVDF sensors along with the manufactured PCB and the Amplifier cirucitry to detect breathing patterns by mounting the whole setup on a normal headset.
+                    <br/><br/>
+                    It is not a released product but it could be improved by making a custom headset and modifying it looks and sensitivity to make it a comfortable product to use on a daily basis. It also needs to be tested against real data obtained from patients to find out its effectiveness and modify the required parameters.
                 </p>
             </div>
+            </section>
 
             <!-- Footer -->
             <footer class="footer">

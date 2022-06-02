@@ -49,7 +49,7 @@
                             <br/><br/>
                             Electric currents that oscillate at radio frequencies (RF currents) have special properties not shared by direct current or lower audio frequency alternating current, such as the 50 or 60 Hz current used in electrical power distribution.
                         </p>
-                        <img src="../img/radio-frequency.png" alt="" style="margin-top:10px;max-width: 300px;">
+                        <img src="../img/radio-frequency.png" alt="" style="margin:10px auto 0px;max-width: 300px;">
                     </div>
                 </div>
             </section>
@@ -61,50 +61,49 @@
                     <strong>Project Introduction:</strong>
                 </p>
                 <p>
-                    Sudoku is a Japanese puzzle game which requires logical placement of numbers. The player must populate a grid of n x n cells with values between 1 and n. The placement of these values is constrained such that no cells in the same row or column can contain the same value. Furthermore, the grid is also divided into n square regions, known as boxes. Each square is √n x √n big. Like the rows and columns, all the values in these boxes must be distinct. A unique puzzle is created by placing fixed values into the grid to begin such that there is only one possible solution. We are developing a multithreaded application to validate the 9x9 grid sudoku puzzle. 
+                    In India, there are 70% people dependent on agriculture. Robotics plays a major role in various fields such as industrial, medical, military applications etc., The robotics field are gradually increasing its productivity in agriculture field. Some of the major problems in the Indian agricultural are rising of input costs, availability of skilled labors, lack of water resources and crop monitoring. To overcome these problems, the automation technologies were used in agriculture. The automation in the agriculture could help farmers to reduce their efforts.By the development of these agrobots lot of manual labor will also be decreased.
                     <br/><br/>
-                    Multithreading our application increases the throughput and improves the performance by executing the threads concurrently on single core processor or parallel on multi core processors. This project helps in understanding the concept of multithreaded application. It gives detailed information about creating threads and interacting with the threads i.e passing parameters to thread and returning parameters from thread. 
+                    The robot has been developed for the processes such as ploughing and seed sowing. The robot is developed to concentrate in an efficient manner and also it is expected to perform the operations autonomously. These functions can be integrated into a single robot and then performed.In recent years, the development of autonomous vehicles in agriculture has experienced increased interest. This development has led many researchers to start developing more rational and adaptable vehicles. All the processes are advance to modifying the mechanism in farming which works automatically without the man power requirement.</p>
+                <p>
+                    <strong>Project Report:</strong>
                 </p>
                 <p>
+                    <a href="../media/Automated Farming Report.pdf">Automated Farming Robot</a>
+                </p>
+                    <p>
                     <strong>Background:</strong>
                 </p>
                 <p>
-                    We had to design a multithreaded system application which validates the solution of the sudoku puzzle and then determines if it is valid. There are a lot of ways we can go about with this validator. The most common strategy would be as follows:
-                    <ul>
-                        <li>One thread that runs through all the columns and reads the values to make sure each column has all the numbers from 1 to 9 and checks for no repeating numbers.</li>
-                        <li>One thread that runs through the rows from 1 to 9 and checks for all numbers and no repeating numbers.</li>
-                        <li>One thread for each 3 x 3 sub-grid to check for the numbers 1 to 9</li>
-                    </ul>
+                    The present project aims at designing an intelligent robotic vehicle which can be controlled wirelessly through RF communication. The objective is to develop a microcontroller-based system that helps in on farm activities like seeding, ploughing and closing the seed pit at designated the autonomous robot. The process of seeding is done by using the DC motor.
                 </p>
                 <p>
-                    In this case there would be 1 + 1 + 9 threads = 11 threads to do this whole process. Another possible solution would be to create one thread to check one row and one thread each for one column. This would lead to a creation of a total of 9 + 9 + 9 threads = 27 threads. However for this project we are planning to use one thread to check three rows and one thread to check three columns. So for a total of 9 rows and 9 columns we would have a total of 3 + 3 + 9 = 15 threads.
+                    The aim is reducing the man power and increasing the productivity rates to a higher level. It is also efficient in terms of pollution because it does not run on fossil fuels, in turn reducing the consumption of ever depleting natural resources. This makes the robot a non-polluting vehicle. One of the other aim is to reduce the running cost of digging or ploughing machines which makes it more suitable for farmers in India to afford it.
                 </p>
                 <p>
                     <strong>Working of the Project:</strong>
                 </p>
                 <p>
-                    This project has two main parts:
+                    An RF transmitter module is a small PCB sub-assembly capable of transmitting a radio wave and modulating that wave to carry data. Transmitter modules are usually implemented alongside a micro controller which will provide data to the module which can be transmitted. RF transmitters are usually subject to requirements which dictate the maximum allowable transmitter power output, harmonics, and band edge requirements.
                 </p>
                 <p>
-                    i) To pass parameters to each of the threads:
+                    An RF receiver module receives the modulated RF signal, and demodulates it. There are two types of RF receiver modules: superheterodyne receivers and super-regenerative receivers. Super-regenerative modules are usually low cost and low power designs using a series of amplifiers to extract modulated data from a carrier wave.
                 </p>
                 <p>
-                    The first part would be to create threads by the parent thread and in this case would be to create 15 threads. The parameters that would be passed to the threads would be the location of what part it would check, that is either the rows or columns or sub-grids. The best approach using C programming would be to use a structure to pass the parameters or values of row, column and sub-grid.
-                </p>
-                <p>
-                    We will make use of PThreads and Windows programs to create the worker threads. The function that will be used to create the thread will be pthread_create() which will pass the parameters as well as the function the threads have to execute.
-                </p>
-                <p>
-                    ii) Return the results to the parent thread:
-                </p>
-                <p>
-                    Once a worker thread is done with its job of validating the numbers it must rejoin the parent thread and pass its values to the parent. This can be done using the pthread_join(). In this case once the thread has returned it would update an integer array with a 1 or a 0. The thread would return true if its check has been validated and no other problems or repetitions are found in the part assigned to it and update 1 to the integer array. It would return false and update the integer array to 0 if the check is not correct.
+                    <ul>
+                        <li>In transmitter part a data Encoder and a RF transmitter is used. The four push buttons are connected with Encoder with respect to ground. When we will press any button encoder will get a digital LOW signal and then applied this signal serially to RF transmitter. The Encoder IC HT12E encodes data or signal or converting it into serial form and then sends this signal by using RF transmitter into the environment.</li>
+                        <br/>
+                        <li>At the receiver end we have used RF receiver to receive data or signal and then applied to HT12D decoder. This decoder IC converts the received serial data to parallel and then send this decoded signal to L293D Motor driver IC. According to the received data robot runs by using two dc motor in forward, reverse, left, right and stop direction.</li>
+                        <br/>
+                        <li>As the robot moves forward the digging of the ground is done by using a structure made using sheet metal and connected to a stepper motor which starts as soon as it gets commands from the arduino module.</li>
+                        <br/>
+                        <li>The seed container is spaced at equal and calculated distance from these structures and is held using a rod holder. The seeds are sown in the digged hole by using a thermocol having a hole and rotating using a servo motor. A container is used for holding the seeds. A hole is drilled in the bottom of the container so that the seeds can fall through it.</li>
+                    </ul>
                 </p>
                 <p>
                     <strong>Results:</strong>
                 </p>
                 <p>
-                    We obtained much faster results with our approach of using 15 threads as the execution time for 15 threads was 0.8125 seconds and with using just 1 thread the execution time was 1.137 seconds. Using 27 threads did give a faster result than 15 threads as its execution time was 0.7431 seconds but it would require more usage of computational resources. Performance also varied with different systems which had a differnt number of cores in them.
+                    In this work a robot, farm robot, has been designed, built and demonstrated to carry out ploughing in an agriculture field and sowing seeds. It is expected that robot will assist the farmers in improving the efficiency of operations in their farms. It is aimed at increasing the productivity and reducing the labour involved, this robot is designed to execute the basic functions required to be carried out in farms. The robot performs the tasks like digging the ground, sowing the seeds and backfilling the soil automatically in a sequence without human intervention. Thus an effort is made so that the robot becomes an aid to the farmers. The design is accepted and unique compared to the existing robots.
                 </p>
             </div>
             </section>
