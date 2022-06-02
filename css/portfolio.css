@@ -484,7 +484,7 @@ text-align: justify;
     z-index: 3;
 }
 
-@media (max-width: 800px){
+@media (hover: none){
     .portfolio__item{
         position: relative;
         transition: none;
