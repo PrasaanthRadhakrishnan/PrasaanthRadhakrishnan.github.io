@@ -45,7 +45,7 @@
                     <div class="portfolio-item-first-div">
                         <p>
                             <strong>What is Optical Character Recognition(OCR)?</strong><br/><br/>
-                            Optical character recognition or optical character reader (OCR) is the electronic or mechanical conversion of images of typed, handwritten or printed text into machine-encoded text, whether from a scanned document, a photo of a document, a scene-photo (for example the text on signs and billboards in a landscape photo) or from subtitle text superimposed on an image (for example: from a television broadcast). <br/> <br/> It is a common method of digitizing printed texts so that they can be electronically edited, searched, stored more compactly, displayed on-line, and used in machine processes such as cognitive computing, machine translation, (extracted) text-to-speech, key data and text mining. OCR is a field of research in pattern recognition, artificial intelligence and computer vision.
+                            Optical character recognition or optical character reader (OCR) is the electronic or mechanical conversion of images of typed, handwritten, or printed text into machine-encoded text, whether from a scanned document, a photo of a document, a scene photo (for example the text on signs and billboards in a landscape photo) or subtitle text superimposed on an image (for example: from a television broadcast). <br/> <br/> It is a common method of digitizing printed texts so that they can be electronically edited, searched, stored more compactly, displayed online, and used in machine processes such as cognitive computing, machine translation, (extracted) text-to-speech, key data, and text mining. OCR is a field of research in pattern recognition, artificial intelligence, and computer vision.
                         </p>
                         <img src="../img/ocr-img.png" alt="">
                     </div>
@@ -59,7 +59,7 @@
                     <strong>Project Overview:</strong>
                 </p>
                 <p>
-                    Sorting of packages manually can be a tedious job. I worked in a team with 3 of my peers and we automated this process by using the concept of Optical Character Recognition (OCR). We built a system, which will automate the process of sorting logistics that is done in courier offices or postal offices.
+                    Sorting packages manually can be a tedious job. I worked in a team with 3 of my peers and we automated this process by using the concept of Optical Character Recognition (OCR). We built a system, which will automate the process of sorting logistics that is done in courier offices or postal offices.
                 </p>
                 <p>
                     <strong>Journal Published:</strong>
@@ -71,16 +71,16 @@
                     <strong>Working of the Project:</strong>
                 </p>
                 <p>
-                    The first sub-system consisted of a conveyor belt where a parcel is placed and starts to move. When the IR sensor detects a parcel, it would trigger a camera module to capture an image. The camera would capture the image of the postal code on the parcel. I also designed a PCB which had inputs and outputs for all the motors. modules and the Raspberry Pi Microprocessor. 
+                    The first sub-system consisted of a conveyor belt where a parcel is placed and starts to move. When the IR sensor detects a parcel, it would trigger a camera module to capture an image. The camera would capture the image of the postal code on the parcel. I also designed a PCB that had inputs and outputs for all the motors. modules and the Raspberry Pi Microprocessor. 
                 </p>
                 <p>
-                    In the second sub-system the image would be sent for further processing to the Raspberry Pi and Optical Character Recognition would be done on it to identify the numbers. The model used for recognizing the numbers would be trained using Tensorflow.
+                    In the second sub-system, the image would be sent for further processing to the Raspberry Pi and Optical Character Recognition would be done on it to identify the numbers. The model used for recognizing the numbers would be trained using Tensorflow.
                 </p>
                 <p>
-                    We used the MNIST dataset to train our CNN model. Although the dataset is effectively solved, it can be used as the basis for learning and practicing how to develop, evaluate, and use convolutional deep learning neural networks for image classification from scratch. We also used K-fold Cross Vlaidation for checking the accuracy of our model. But we faced bigger problems in processing the image that was clicked. We had to preprocess the image and remove noise and effectively separate 6 digits from each other and predict each of them separately. The package required the pincode to be placed in a grid so we could use them as a reference to get the digits only instead of other details like names and addresses.
+                    We used the MNIST dataset to train our CNN model. Although the dataset is effectively solved, it can be used as the basis for learning and practicing how to develop, evaluate, and use convolutional deep learning neural networks for image classification from scratch. We also used K-fold Cross Validation for checking the accuracy of our model. But we faced bigger problems in processing the image that was clicked. We had to preprocess the image and remove noise and effectively separate 6 digits from each other and predict each of them separately. The package required the Pincode to be placed in a grid so we could use them as a reference to get the digits only instead of other details like names and addresses.
                 </p>
                 <p>
-                    After the numbers on the package are identified according to the specified constraints as required by the postal offices, control signals would be given to the Servo Motors which are also attached to the sides of the conveyor system to sort out the packages as required and they would be put in separate containers and would be sent out the respective areas to be delivered.
+                    After the numbers on the package are identified according to the specified constraints as required by the postal offices, control signals would be given to Servo Motors which are also attached to the sides of the conveyor system to sort out the packages as required and they would be put in separate containers and would be sent out the respective areas to be delivered.
                 </p>
                 <p>
                     <strong>Hardware Used:</strong>

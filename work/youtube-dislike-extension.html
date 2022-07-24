@@ -45,11 +45,11 @@
                     <div class="portfolio-item-first-div">
                         <p>
                             <strong>What is Sentiment Analysis?</strong><br/><br/>
-                            Sentiment analysis (or opinion mining) is a natural language processing (NLP) technique used to determine whether data is positive, negative or neutral. Sentiment analysis is often performed on textual data to help businesses monitor brand and product sentiment in customer feedback, and understand customer needs.
+                            Sentiment analysis (or opinion mining) is a natural language processing (NLP) technique used to determine whether data is positive, negative, or neutral. Sentiment analysis is often performed on textual data to help businesses monitor brand and product sentiment in customer feedback, and understand customer needs.
                             <br/><br/>
-                            Sentiment analysis focuses on the polarity of a text (positive, negative, neutral) but it also goes beyond polarity to detect specific feelings and emotions (angry, happy, sad, etc), urgency (urgent, not urgent) and even intentions (interested v. not interested).
+                            Sentiment analysis focuses on the polarity of a text (positive, negative, neutral) but it also goes beyond polarity to detect specific feelings and emotions (angry, happy, sad, etc), urgency (urgent, not urgent), and even intentions (interested v. not interested).
                             <br/><br/>
-                            Since humans express their thoughts and feelings more openly than ever before, sentiment analysis is fast becoming an essential tool to monitor and understand sentiment in all types of data.
+                            Since humans express their thoughts and feelings more openly than ever before, sentiment analysis is fast becoming an essential tool to monitor and understand the sentiment in all types of data.
                         </p>
                         <img src="../img/sentiment-analysis-transparent.png" alt="" style="margin-top:10px;">
                     </div>
@@ -80,7 +80,7 @@
                     Our process consisted of selected datasets with comments for the analysis of the comments. Firstly, we went through the datasets in a lot of sources such as Kaggle, Data World, Open ML Repository, and US Census. However, once we completed the data preprocessing and started working on the data, we realized that most datasets were all popular video datasets with very one-sided types of comments such as song videos, movie comments, etc. It is pertinent to note that most of the comments in the music video were the most common datasets of youtube comments. 
                 </p>
                 <p>
-                    Therefore, for the purpose of our project, we took videos off the trending section of YouTube and scraped the comments from those videos. We found an existing dataset of YouTube comments on Kaggle and added the scraped comments to the existing dataset to augment it with more recent data. We tried not to rely on music videos or movie-based videos, since a lot of comments on these videos contain neutral information such as movie facts or song lyrics, and also become relevant, skewing user analysis.
+                    Therefore, for our project, we took videos off the trending section of YouTube and scraped the comments from those videos. We found an existing dataset of YouTube comments on Kaggle and added the scraped comments to the existing dataset to augment it with more recent data. We tried not to rely on music videos or movie-based videos, since a lot of comments on these videos contain neutral information such as movie facts or song lyrics, and also become relevant, skewing user analysis.
                 </p>
                 <p>
                     In the scraping process, we used the parameter of relevance that the YouTube API provides to help skim through spam comments. While this method isn't perfect, since some spam comments still make it through to the dataset, it has been found that their sentiments are often neutral, so they don't negatively impact the analysis very hard unless they are present in a majority. Thus, spam comments were not a major problem for our approach.
@@ -134,7 +134,7 @@
                     </ul>
                 </p>
                 <p>
-                    For the ML part, we are using an implementation of BERT (Bidirectional Encoder Representations from Transformers), which entails a pretrained representation of a large word corpus for use in sentiment analysis. We trained our model with the dataset that was described above. The model was then configured with the TextBlob wrapper library, which opened functions for sentiment analysis on a large scale with acceptable time complexity. We needed this since we would be applying sentiment analysis to a large number of comments in real-time, therefore time complexity is of utmost importance. 
+                    For the ML part, we are using an implementation of BERT (Bidirectional Encoder Representations from Transformers), which entails a pre-trained representation of a large word corpus for use in sentiment analysis. We trained our model with the dataset that was described above. The model was then configured with the TextBlob wrapper library, which opened functions for sentiment analysis on a large scale with acceptable time complexity. We needed this since we would be applying sentiment analysis to a large number of comments in real-time, therefore time complexity is of utmost importance. 
                 </p>
                 <p>
                     <strong>Results:</strong>
