@@ -59,15 +59,15 @@
                     <strong>Project Introduction:</strong>
                 </p>
                 <p>
-                    Sudoku is a Japanese puzzle game that requires the logical placement of numbers. The player must populate a grid of n x n cells with values between 1 and n. The placement of these values is constrained such that no cells in the same row or column can contain the same value. Furthermore, the grid is also divided into n square regions, known as boxes. Each square is √n x √n big. Like the rows and columns, all the values in these boxes must be distinct. A unique puzzle is created by placing fixed values into the grid to begin such that there is only one possible solution. We are developing a multithreaded application to validate the 9x9 grid sudoku puzzle. 
+                    Sudoku is a Japanese puzzle game that requires the logical placement of numbers. The player must populate a grid of n x n cells with values between 1 and n. The placement of these values is constrained such that no cells in the same row or column can contain the same value. Furthermore, the grid is also divided into n square regions, known as boxes. Each square is √n x √n big. Like the rows and columns, all the values in these boxes must be distinct. A unique puzzle is created by placing fixed values into the grid to begin such that there is only one possible solution. We developed a multithreaded application to validate the 9x9 grid sudoku puzzle. 
                     <br/><br/>
-                    Multithreading our application increases the throughput and improves the performance by executing the threads concurrently on a single-core processor or parallel on multi-core processors. This project helps in understanding the concept of multithreaded applications. It gives detailed information about creating threads and interacting with the threads i.e passing parameters to thread and returning parameters from the thread. 
+                    Multithreading our application increased the throughput and improved the performance by executing the threads concurrently on a single-core processor or parallel on multi-core processors. This project helped in understanding the concept of multithreaded applications. It gave us detailed information about creating threads and interacting with the threads i.e passing parameters to thread and returning parameters from the thread. 
                 </p>
                 <p>
                     <strong>Background:</strong>
                 </p>
                 <p>
-                    We had to design a multithreaded system application that validates the solution of the sudoku puzzle and then determines if it is valid. There are a lot of ways we can go about with this validator. The most common strategy would be as follows:
+                    We had to design a multithreaded system application that validated the solution of the sudoku puzzle and then determined if it was valid. There were many ways to have gone about with multithreading. The most common strategies were as follows:
                     <ul>
                         <li>One thread that runs through all the columns and reads the values to make sure each column has all the numbers from 1 to 9 and checks for no repeating numbers.</li>
                         <li>One thread that runs through the rows from 1 to 9 and checks for all numbers and no repeating numbers.</li>
@@ -75,13 +75,13 @@
                     </ul>
                 </p>
                 <p>
-                    In this case, there would be 1 + 1 + 9 threads = 11 threads to do this whole process. Another possible solution would be to create one thread to check one row and one thread each for one column. This would lead to a creation of a total of 9 + 9 + 9 threads = 27 threads. However, for this project, we are planning to use one thread to check three rows and one thread to check three columns. So for a total of 9 rows and 9 columns we would have a total of 3 + 3 + 9 = 15 threads.
+                    In this case, there would be 1 + 1 + 9 threads = 11 threads to do this whole process. Another possible solution was to create one thread to check one row and one thread each for one column. This would lead to a creation of a total of 9 + 9 + 9 threads = 27 threads. However, for this project, we used one thread to check three rows and one thread to check three columns. So for a total of 9 rows and 9 columns we used a total of 3 + 3 + 9 = 15 threads.
                 </p>
                 <p>
                     <strong>Working of the Project:</strong>
                 </p>
                 <p>
-                    This project has two main parts:
+                    This project had two main parts:
                 </p>
                 <p>
                     i) To pass parameters to each of the threads:
@@ -90,13 +90,13 @@
                     The first part would be to create threads by the parent thread and in this case, would be to create 15 threads. The parameters that would be passed to the threads would be the location of what part it would check, that is either the rows or columns or sub-grids. The best approach using C programming would be to use a structure to pass the parameters or values of the row, column, and sub-grid.
                 </p>
                 <p>
-                    We will make use of PThreads and Windows programs to create the worker threads. The function that will be used to create the thread will be pthread_create() which will pass the parameters as well as the function the threads have to execute.
+                    We made use of PThreads and Windows programs to create the worker threads. The function that we used to create the thread was pthread_create() which passed the parameters as well as the function that the threads had to execute.
                 </p>
                 <p>
                     ii) Return the results to the parent thread:
                 </p>
                 <p>
-                    Once a worker thread is done with its job of validating the numbers it must rejoin the parent thread and pass its values to the parent. This can be done using the pthread_join(). In this case, once the thread has returned it would update an integer array with a 1 or a 0. The thread would return true if its check has been validated and no other problems or repetitions are found in the part assigned to it and update 1 to the integer array. It would return false and update the integer array to 0 if the check is not correct.
+                    Once a worker thread is done with its job of validating the numbers it must rejoin the parent thread and pass its values to the parent. This was done using the pthread_join(). In this case, once the thread returned it would update an integer array with a 1 or a 0. The thread would return true if its check has been validated and no other problems or repetitions were found in the part assigned to it and updated 1 to the integer array. It would return false and update the integer array to 0 if the check was not correct.
                 </p>
                 <p>
                     <strong>Results:</strong>
