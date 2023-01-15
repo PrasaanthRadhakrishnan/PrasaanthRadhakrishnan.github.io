@@ -416,7 +416,7 @@ text-align: justify;
 
 /* My Work */
 
-.my-work{
+.my-work, .my-hobbies{
     background-color: var(--clr-dark);
     color: var(--clr-light);
     text-align: center;
@@ -499,6 +499,17 @@ text-align: justify;
         background-color: #000;
     }
 }
+
+/* My academic projects */
+.my-academic-projects{
+    background-image: url('../img/body-background.png');
+    background-size: cover;
+    background-position: center;
+    color: var(--clr-light);
+    text-align: center;
+}
+
+
 /* Footer */
 
 .footer {
