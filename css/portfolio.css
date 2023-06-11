@@ -597,6 +597,46 @@ text-align: justify;
     margin-right: auto;
 }
 
+.portfolio-item-individual .image-para{
+    max-width: 800px;
+    text-align: justify;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.portfolio-item-individual .image-para{
+    overflow: hidden;
+}
+
+.portfolio-item-individual .image-para p{
+    width: 48%;
+    margin: 2% auto;
+    float: left;
+}
+
+.portfolio-item-individual .image-para img{
+    width: 48%;
+    margin: auto;
+    float: right;
+    max-height: 200px;
+}
+
+/* CSS for Mobiles */
+
+@media (max-width: 600px) {
+    .portfolio-item-individual .image-para p{
+        width: 100%;
+        margin: auto;
+        float: left;
+    }
+    .portfolio-item-individual .image-para img{
+        width: 100%;
+        margin: 5% auto;
+        float: right;
+        max-height: 200px;
+    }
+}
+
 .portfolio-item-individual ul{
     max-width: 800px;
     margin-left: auto;

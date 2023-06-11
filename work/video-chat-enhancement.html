@@ -1,0 +1,138 @@
+<DOCTYPE html>
+    <html lang="en">
+        <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width-device-width, initial-scale=1.0">
+            <title>Prasaanth Radhakrishnan's Portfolio</title>
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+            integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer"/>
+            <!-- Fonts -->
+            <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro:400,900|Source+Sans+Pro:300,900&display=swap" rel="stylesheet">
+    
+            <link rel="stylesheet" href="../css/portfolio.css">
+        </head>
+        <body>
+            <header>
+                <div class="logo">
+                    <!--<img src="img/profilePic.jpg" alt="">-->
+                </div>
+                <button class="nav-toggle" aria-label="toggle navigation">
+                    <span class="hamburger"></span>
+                </button>
+                <nav class="nav">
+                    <ul class="nav__list">
+                        <li class="nav__item"><a href="../index.html" class="nav__link">Home</a></li>
+                        <li class="nav__item"><a href="../index.html#services" class="nav__link">Services</a></li>
+                        <li class="nav__item"><a href="../index.html#about" class="nav__link">About Me</a></li>
+                        <li class="nav__item"><a href="../index.html#work" class="nav__link">Work</a></li>
+                    </ul>
+                </nav>
+            </header>
+    
+            <!-- Introduction -->
+            <section class="intro" id="home">
+                <h1 class="section__title section__title--intro"> 
+                    Video Chat<strong class="item-page-heading">Enhancement</strong>
+                </h1>
+                <p class="section__subtitle section__subtitle--intro">Using ML</p>
+                <img src="../img/video-chat-main.png" alt="Item Photo" class="intro__img item__img">
+            </section>
+
+
+            <section class="general-section">
+                <div class="portfolio-item-individual">
+                    <div class="portfolio-item-first-div">
+                        <p>
+                            <strong>Reason for Video Quality Enhancement</strong><br/><br/>
+                            Video streaming is widely used globally, but they often suffer from poor video quality due to variations in internet speed and connection quality. This can significantly detract from the user experience. While upgrading to a better internet connection may not be immediately possible for all users, real-time resolution upscaling could potentially mitigate these issues.Due to the substantial amount of visual data transmitted over the internet in real-time, compression algorithms have become a necessity. 
+                        </p>
+                        <img src="../img/Video-Chat-Design-Logo-PNG.png" style="margin-top: 20px;" alt="">
+                    </div>
+                </div>
+            </section>
+
+
+            <section class="experience-section">
+            <div class="portfolio-item-individual">
+                <p>
+                    <strong>Project Overview:</strong>
+                </p>
+                <p>
+                    The project was about building a chat application that could enhance the quality of images by utilizing AI and ML based techniques to improve the resolution. Furthermore, the models used could identify the internet speed and modify the resolution as necessary, allowing low-level hardware devices to provide a superior chat experience.
+                </p>
+                <p>
+                    <strong>Project Report:</strong>
+                </p>
+                <p>
+                    <a href="../media/Image-Enhancement.pdf" target="_blank">Image and Video Enhancement</a>
+                </p>
+                <p>
+                    <strong>Working of the Project:</strong>
+                </p>
+
+                <div class="image-para">
+                    <p>The video chat application uses a peer-to-peer (P2P) TCP connection for streaming content between two clients. A server is used to help with establishing the connection between the clients. The displayed image on the client side is then enhanced using the chosen super-resolution model. Because video chat applications can be used on such a broad array of devices we considered a variety of models that offer a range of trade-offs between speed and quality.
+                    </p>
+                    <img src="../img/image-enhancement-huyen.png" alt="">
+                </div>
+
+                <p>
+                    Our objective was not only to accurately reconstruct the original image, but to produce an image that is visually appealing to the end user. So, we made subjective judgments on the visual appeal of the outputs from each model, regardless of how accurate they are. For the subjective assessment, we used live camera footage in order to judge the quality of the output under more realistic circumstances. The two factors considered were Perceieved clarity of the image and temporal stability. 
+                </p>
+
+                <p>
+                    We tested various models for the application using two main metrics. The metrics used to evaluate the models were PSNR and SSIM. The Super Resolution Performance Comparison and JPEG compression results based on Quality and the models are shown below.
+                </p>
+                <p>
+                    <img src="../img/graphs-for-image-res.png" alt="">
+                </p>    
+                <p>
+                    The implementation of this application offers several benefits to both users and service/content providers. One such advantage is that users are more likely to continue using or switch to this application if they have an improved quality of experience (QoE) while video chatting or streaming. This, in turn, can boost the user's productivity and generate higher revenue for the companies. By using this implementation, even though a GPU is used they can get improved video qualities in low network areas. Running the implementation system on the server side offers several advantages for determining the bit rate of a user. Many applications today use HTTP-based streaming and chat based on ABR, which means that implementing this system would require minimal changes to the applications.
+                </p>
+                <p>
+                    <strong>Super-Resolution Models Used:</strong>
+                    <ul>
+                        <li>Bicubic interpolation</li>
+                        <li>ESPCN: Efficient Sub-Pixel Convolutional Network</li>
+                        <li>SRResNet: Super-Resolution Residual Network</li>
+                        <li>ESRGAN: Enhanced Super-Resolution Generative Adversarial Network</li>
+                        <li>RCAN: Residual Channel Attention Network</li>
+                        <li>NinaSR: Neural Image Super-Resolution</li>
+                    </ul>
+                </p>
+                
+            </div>
+            </section>
+
+            <!-- Footer -->
+            <footer class="footer">
+                <a href="radhakrishnan.prasaanth@gmail.com" class="footer__link">radhakrishnan.prasaanth@gmail.com</a>
+                <ul class="social-list">
+                    <li class="social-list__item">
+                        <a class="social-list__link" href="https://www.linkedin.com/in/prasaanth-radhakrishnan/" target="_blank">
+                            <i class="fa-brands fa-linkedin"></i>
+                        </a>
+                    </li>
+                    <li class="social-list__item">
+                        <a class="social-list__link" href="https://github.com/PrasaanthRadhakrishnan" target="_blank">
+                            <i class="fa-brands fa-github"></i>
+                        </a>
+                    </li>
+                    <li class="social-list__item">
+                        <a class="social-list__link" href="https://www.instagram.com/thecalidaartist/" target="_blank">
+                            <i class="fa-brands fa-instagram"></i>
+                        </a>
+                    </li>
+                    <li class="social-list__item">
+                        <a class="social-list__link" href="mailto:prasaanth.radhakrishnan@sjsu.edu" target="_blank">
+                            <i class="fa-brands fa-google"></i>
+                        </a>
+                    </li>
+                </ul>
+            </footer>
+    
+            <script src="../js/index.js"></script>
+    
+        </body>
+    </html>
