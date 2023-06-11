@@ -59,7 +59,7 @@
                     <strong>Project Overview:</strong>
                 </p>
                 <p>
-                    Sorting packages manually can be a tedious job. I worked in a team with 3 of my peers and we automated this process by using the concept of Optical Character Recognition (OCR). We built a system, which will automate the process of sorting logistics that is done in courier offices or postal offices.
+                    Sorting packages manually can be a tedious job. I worked in a team with 3 of my peers and we automated this process by using the concept of Optical Character Recognition (OCR). We built a prototype system, which will automate the process of sorting logistics that is done in courier offices or postal offices.
                 </p>
                 <p>
                     <strong>Journal Published:</strong>
@@ -70,9 +70,12 @@
                 <p>
                     <strong>Working of the Project:</strong>
                 </p>
-                <p>
-                    The first sub-system consisted of a conveyor belt where a parcel is placed and starts to move. When the IR sensor detects a parcel, it would trigger a camera module to capture an image. The camera would capture the image of the postal code on the parcel. I also designed a PCB that had inputs and outputs for all the motors. modules and the Raspberry Pi Microprocessor. 
-                </p>
+                <div class="image-para">
+                    <p style="margin: 4% auto;">
+                        The first sub-system consisted of a conveyor belt where a parcel is placed and starts to move. When the IR sensor detects a parcel, it would trigger a camera module to capture an image. The camera would capture the image of the postal code on the parcel. I also designed a PCB that had inputs and outputs for all the motors. modules and the Raspberry Pi Microprocessor. 
+                    </p>
+                    <img src="../img/OCR-Actual-image.jpg" alt="">
+                </div>
                 <p>
                     In the second sub-system, the image would be sent for further processing to the Raspberry Pi and Optical Character Recognition would be done on it to identify the numbers. The model used for recognizing the numbers would be trained using Tensorflow.
                 </p>
