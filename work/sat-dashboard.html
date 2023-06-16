@@ -1,0 +1,148 @@
+<DOCTYPE html>
+    <html lang="en">
+        <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width-device-width, initial-scale=1.0">
+            <title>Dashboard Design</title>
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+            integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer"/>
+            <!-- Fonts -->
+            <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro:400,900|Source+Sans+Pro:300,900&display=swap" rel="stylesheet">
+    
+            <link rel="stylesheet" href="../css/portfolio.css">
+        </head>
+        <body>
+            <header>
+                <div class="logo">
+                    <!--<img src="img/profilePic.jpg" alt="">-->
+                </div>
+                <button class="nav-toggle" aria-label="toggle navigation">
+                    <span class="hamburger"></span>
+                </button>
+                <nav class="nav">
+                    <ul class="nav__list">
+                        <li class="nav__item"><a href="../index.html" class="nav__link">Home</a></li>
+                        <li class="nav__item"><a href="../index.html#services" class="nav__link">Services</a></li>
+                        <li class="nav__item"><a href="../index.html#about" class="nav__link">About Me</a></li>
+                        <li class="nav__item"><a href="../index.html#work" class="nav__link">Work</a></li>
+                    </ul>
+                </nav>
+            </header>
+    
+            <!-- Introduction -->
+            <section class="intro" id="home">
+                <h1 class="section__title section__title--intro"> 
+                    Satellite<strong class="item-page-heading">Dashboard</strong>
+                </h1>
+                <p class="section__subtitle section__subtitle--intro">Using Grafana</p>
+                <img src="../img/sat-dash-stock.jpg" alt="Item Photo" class="intro__img item__img">
+            </section>
+
+
+            <section class="general-section">
+                <div class="portfolio-item-individual">
+                    <div class="portfolio-item-first-div">
+                        <p>
+                            <strong>What are Dashboards?</strong><br/><br/>
+                            UI dashboards not only provide a snapshot of current performance but also enable users to track historical data and identify patterns or anomalies. By visualizing data in a concise and intuitive manner, dashboards promote better understanding and communication across teams and departments. 
+                            <br/><br/>
+                            They serve as a centralized hub where stakeholders can monitor progress, identify bottlenecks, and take proactive measures to optimize performance. With real-time updates and interactive elements, UI dashboards empower users to explore data, drill down into details, and gain actionable insights. Ultimately, UI dashboards streamline data analysis and foster data-driven decision-making, driving success and growth for businesses in today's fast-paced digital landscape.
+                        </p>
+                        <img src="../img/dashboard-transparent.png" style="margin-top: 0px;" alt="">
+                    </div>
+                </div>
+            </section>
+
+
+            <section class="experience-section">
+            <div class="portfolio-item-individual">
+                <p>
+                    <strong>Work Overview:</strong>
+                </p>
+                <p>
+                    The task was to build a Dashboard so consumers who wanted to track a satellite's parameters visually could have easy access to it. I used Grafana Dashboards which is an open-source software along with a combination of InfluxDB and MySQL to store the satellite data. 
+                </p>
+                <p>
+                    <strong>Working of the Dashboard:</strong>
+                </p>
+
+                <div class="image-para">
+                    <p>
+                        The image on the right is the path a Low Earth Orbit (LEO) satellite took in less than a day captured and displayed on the Dashboard. For this dashboard, I used the six Orbital parameters of a known satellite in NASA's open-source General Mission Analysis Tool to generate the appropriate parameters for the satellite.
+                    </p>
+                    <img src="../img/Satloc.png" alt="">
+                </div>
+
+                <p>
+                    This includes parameters such as Altitude, Latitude, Longitude, Dry Mass, etc. This can also be used to get an estimate of how much fuel there is, if the solar panels are in charge or discharge state, how much power is left, how much power is being consumed and many more analytics can be derived from it.
+                </p>
+
+                <p>
+                    This script file generated can then be parsed using Python to retrieve the required values and load it onto a CSV file so it can be saved and documented if required. The CSV file generated in this case would be unannotated and using it directly to store in a Database is problematic. Therefore the CSV file is then converted to an annotated form and then queried again to store in a database like MySQL or InfluxDB. In this case, I used InfluxDB mainly because of its better integration with Grafana Dashboards.
+                </p>
+                <p>
+                    <img src="../img/Final-Dashboard.png" alt="">
+                </p>    
+                <p>
+                   The above image is the dashboard I made for the sample parameters derived from GMAT. It Includes the parameters of Altitude, Total Power remaining in the satellite's batteries, the amount of power consumed by the Bus connecting the electrical components and the amount of power that can be used for the thrust of the satellite. The thrust power as noticed in the graph reduces as time progresses when the satellite's panels are not facing the sun.
+                </p>
+                <p>  
+                    Once the data is loaded into the Databases, it can be linked with the Grafana Interface. As both servers would be running on the cloud, a combination of InfluxDB and Grafana can be used to monitor this data in Real-Time. Using Python APIs in the beta stage of GMAT, I was able to run scripts with the API and load the data into the databases instantaneously. Once both the servers are running, using the "Flux" query language, the appropriate parameters can be derived from the database and displayed on the Dashboard as necessary.
+                </p>
+                <p>
+                    Using a Dashboard this way, gives us more flexibility to monitor data in real-time for any discrepancies or even by a customer who wants to simulate scenarios based on which they can make a decision on what parameters they should use for a product design.
+                </p>
+
+                <p>
+                    <strong>Software Used:</strong>
+                    <ul>
+                        <li>Grafana Dashboards</li>
+                        <li>Influx DB</li>
+                        <li>General Mission Analysis Tool (GMAT)</li>
+                    </ul>
+                </p>
+
+                <p>
+                    <strong>Languages Used:</strong>
+                    <ul>
+                        <li>Python</li>
+                        <li>MySQL</li>
+                        <li>Flux</li>
+                    </ul>
+                </p>
+                
+            </div>
+            </section>
+
+            <!-- Footer -->
+            <footer class="footer">
+                <a href="radhakrishnan.prasaanth@gmail.com" class="footer__link">radhakrishnan.prasaanth@gmail.com</a>
+                <ul class="social-list">
+                    <li class="social-list__item">
+                        <a class="social-list__link" href="https://www.linkedin.com/in/prasaanth-radhakrishnan/" target="_blank">
+                            <i class="fa-brands fa-linkedin"></i>
+                        </a>
+                    </li>
+                    <li class="social-list__item">
+                        <a class="social-list__link" href="https://github.com/PrasaanthRadhakrishnan" target="_blank">
+                            <i class="fa-brands fa-github"></i>
+                        </a>
+                    </li>
+                    <li class="social-list__item">
+                        <a class="social-list__link" href="https://www.instagram.com/thecalidaartist/" target="_blank">
+                            <i class="fa-brands fa-instagram"></i>
+                        </a>
+                    </li>
+                    <li class="social-list__item">
+                        <a class="social-list__link" href="mailto:prasaanth.radhakrishnan@sjsu.edu" target="_blank">
+                            <i class="fa-brands fa-google"></i>
+                        </a>
+                    </li>
+                </ul>
+            </footer>
+    
+            <script src="../js/index.js"></script>
+    
+        </body>
+    </html>
