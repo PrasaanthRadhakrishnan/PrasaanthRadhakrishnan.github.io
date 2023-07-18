@@ -1,0 +1,96 @@
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.95);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+  }
+  
+  .content {
+    background-color: white;
+    padding: 20px;
+    border-radius: 20px;
+    text-align: center;
+    position: relative;
+    max-width: 30%;
+    color: black;
+  }
+
+  .content h3{
+    font-size: 18px;
+  }
+
+  .content p, .content button{
+    font-size: 16px;
+  }
+  
+  .button-container {
+    margin-top: 10px;
+  }
+  
+  .button-container button {
+    margin: 0 5%;
+    border-radius: 10px;
+    background-color: var(--clr-accent);
+    width: 40%;
+    border: 1px solid darkgreen;
+    cursor: pointer;
+    height: 40px;
+  }
+  
+  /* .overlay.overlay-1 {
+    color: rgba(255, 0, 0, 0.8);
+  } */
+  
+  .overlay.overlay-1 .content{
+    bottom: 30%;
+    left: 25%
+  }
+
+  /* .overlay.overlay-2 {
+    color: rgba(0, 255, 0, 0.8);
+  } */
+
+  .overlay.overlay-2 .content{
+    top: 30%;
+    left: 25%
+  }
+  
+  /* .overlay.overlay-3 {
+    color: rgba(0, 0, 255, 0.8);
+  } */
+
+  .overlay.overlay-3 .content{
+    top: 30%;
+    right: 25%
+  }
+  
+  /* .overlay.overlay-4 {
+    color: #000;
+  } */
+
+  .overlay.overlay-4 .content{
+    bottom: 30%;
+    right: 25%
+  }
+
+  .current-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 100;
+  }
+  
+  .hidden-overlay {
+    display: none;
+  }
+  
+  /* .overlay.open {
+  } */

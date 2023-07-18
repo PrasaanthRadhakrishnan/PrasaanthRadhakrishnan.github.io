@@ -1,0 +1,36 @@
+/* Adding overlay code */
+.overlay {
+    position: absolute;
+    top: 10%;
+    right: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 4;
+    width: 600%;
+  }
+  
+  .overlay-content {
+    background-color: #111;
+    padding: 10px;
+    border-radius: 8px;
+    text-align: center;
+    color: var(--clr-accent);
+  }
+  
+  .overlay-btn {
+    display: inline-block;
+    padding: 0.5em 1em;
+    background: var(--clr-accent);
+    color: var(--clr-dark);
+    text-decoration: none;
+    cursor: pointer;
+    font-size: 0.5em;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight: var(--fw-bold);
+    transition: transform 300ns ease-in-out;
+  }
+  
+  /* End of overlay code */
